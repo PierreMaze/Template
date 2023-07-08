@@ -1,0 +1,47 @@
+@import url(./assets//styles/_variables.scss);
+@import url(./assets//styles/_home.scss);
+@import url(./assets//styles/_button.scss);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  min-height: 100%;
+  height: 100%;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+main {
+  width: 100%;
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  background-color: #eceff3 !important;
+  color: #0c3944;
+}
+
+input {
+  background-color: #fafeff !important;
+  color: #474136;
+}
+
+img {
+  width: 60%;
+}
