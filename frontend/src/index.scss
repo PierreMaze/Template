@@ -11,8 +11,8 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #0c3944;
-  color:antiquewhite ul {
+
+  ul {
     list-style: none;
     padding: 0;
     margin: 0;
@@ -30,4 +30,8 @@ body {
 input {
   background-color: #fafeff !important;
   color: #474136;
+}
+
+img {
+  background-color: #0000;
 }
