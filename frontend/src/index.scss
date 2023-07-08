@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+body {
+  min-height: 100vh;
+  height: 100vh;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #0c3944;
+  color:antiquewhite ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    text-decoration: none;
+  }
+  input,
+  textarea {
+    background-color: #eceff3 !important;
+    color: #0c3944;
+  }
+}
+
+input {
+  background-color: #fafeff !important;
+  color: #474136;
+}
