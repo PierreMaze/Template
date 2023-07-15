@@ -15,7 +15,7 @@ CREATE TABLE `users` (
     `employment` varchar(255)
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
-INSERT INTO `users` (fullname, email, password, gender, phone, picture_profile, is_admin, employment)
+INSERT INTO `users` (fullname, email, gender, phone, picture_profile, is_admin, employment)
 VALUES ("Sassy", "Sassy@exemple.com", "Femme", '0465432107', "https://avatars.dicebear.com/api/micah/Sassy.svg", true, "Bâtiment");
 
 DROP TABLE IF EXISTS `category`;
