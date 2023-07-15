@@ -26,17 +26,17 @@ const CardBody = () => {
         <li key={user.id}>
           <div className="box-title">
             <h1>Hello World!</h1>
-            <h2>Je m&apos;appelle {user.fullname}</h2>
+            <h2>My name is {user.fullname}</h2>
           </div>
           <div className="box-subtitle">
             <p>
-              Tu peux me contacter par mail:{" "}
+              You can contact me by email :
               <a href="https://www.linkedin.com/\in\pierremazelaygue">
-                <strong>{user.email}</strong>
+                <strong> {user.email}</strong>
               </a>
             </p>
             <p>
-              <strong>Ou alors par téléphone : </strong>
+              <strong>Or by phone: </strong>
               {user.phone}.
             </p>
             <p>

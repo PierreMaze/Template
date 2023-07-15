@@ -13,7 +13,7 @@ const Sidebar = () => {
         <ul className="navbar_links">
           <li className="navbar_item">
             <a href="/" className="navbar_link">
-              Accueil
+              Home
             </a>
           </li>
           <li className="navbar_item">
@@ -23,7 +23,7 @@ const Sidebar = () => {
           </li>
           <li className="navbar_item">
             <a href="/about" className="navbar_link">
-              A Propos
+              About Us
             </a>
           </li>
         </ul>
