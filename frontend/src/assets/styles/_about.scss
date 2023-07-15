@@ -1,0 +1,26 @@
+.about-box {
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+
+  .container_picture_about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 6rem 0 2rem;
+  }
+
+  .about_us {
+    background: rgba(50, 0, 0, 0.75);
+    border-radius: 15px;
+    padding: 0.3rem 1rem;
+    margin: 0rem 1rem;
+    font-size: 0.75rem;
+
+    .about_text {
+      margin: 1rem 0;
+      text-align: center;
+      color: #fff;
+    }
+  }
+}

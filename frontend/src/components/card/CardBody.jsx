@@ -23,26 +23,33 @@ const CardBody = () => {
   return (
     <div className="box-secondary">
       {users.map((user) => (
-        <>
-          <div className="box-title" key={user.id}>
+        <li key={user.id}>
+          <div className="box-title">
             <h1>Hello World!</h1>
             <h2>Je m&apos;appelle {user.fullname}</h2>
           </div>
           <div className="box-subtitle">
             <p>
-              Tu peux me contacter avec ce mail:{" "}
+              Tu peux me contacter par mail:{" "}
               <a href="https://www.linkedin.com/\in\pierremazelaygue">
-                {user.email}
+                <strong>{user.email}</strong>
               </a>
             </p>
-            <p>Ou alors par ce numéro: {user.phone}</p>
-            <p>je suis une {user.gender}</p>
             <p>
-              Je suis Cheffe de chantier Pays-Urbain dans le {user.employment}
+              <strong>Ou alors par téléphone : </strong>
+              {user.phone}.
+            </p>
+            <p>
+              <strong>Gender : </strong>
+              {user.gender}.
+            </p>
+            <p>
+              <strong>Job : </strong>
+              {user.employment}.
             </p>
             <Footer />
           </div>
-        </>
+        </li>
       ))}
     </div>
   );

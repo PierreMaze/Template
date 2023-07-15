@@ -9,6 +9,8 @@
   flex-wrap: wrap;
   -webkit-justify-content: center;
   justify-content: center;
+  background-color: #57cc99;
+  color: #000;
 }
 
 .button {
@@ -34,34 +36,35 @@
   vertical-align: middle;
 }
 
-.bg-2 .button {
-  color: #eceff1;
-  border-color: #eceff1;
+.bg .button {
+  color: #000;
+  border-color: none;
+  font-weight: 600;
 }
 
 .button--size-s {
   font-size: 14px;
 }
 
-.bg-3 {
-  background: #37474f;
-  color: #fff;
+.bg {
+  background: #d8f3dc;
+  color: #000;
 }
 
 .button--border-thick {
-  border: 3px solid;
+  border: 3px solid #80ed99;
 }
 
-.button--moema {
+.button--green {
   padding: 1.5em 3em;
   border-radius: 50px;
-  background: #9b85c4;
-  color: #fff;
+  background-color: #80ed99;
+  color: #000;
   -webkit-transition: background-color 0.3s, color 0.3s;
   transition: background-color 0.3s, color 0.3s;
 }
 
-.button--moema::before {
+.button--green::before {
   content: "";
   position: absolute;
   top: -20px;
@@ -75,20 +78,51 @@
   -webkit-transform: scale3d(0.8, 0.5, 1);
   transform: scale3d(0.8, 0.5, 1);
 }
-.button--moema:hover {
+.button--green:hover {
   -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
   transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
-  color: #eceff1;
-  background-color: #3f51b5;
-  -webkit-animation: anim-moema-1 0.3s forwards;
-  animation: anim-moema-1 0.3s forwards;
+  color: #000;
+  background-color: #70e000;
+  -webkit-animation: anim-1 0.3s forwards;
+  animation: anim-1 0.3s forwards;
+  border-color: #70e000;
 }
 
-.button--moema:hover::before {
-  -webkit-animation: anim-moema-2 0.3s 0.3s forwards;
-  animation: anim-moema-2 0.3s 0.3s forwards;
+.button--pink:hover {
+  -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  color: #000;
+  background-color: #eaac8b;
+  -webkit-animation: anim-1 0.3s forwards;
+  animation: anim-1 0.3s forwards;
+  border-color: #eaac8b;
 }
-@-webkit-keyframes anim-moema-1 {
+
+.button--blue:hover {
+  -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  color: #000;
+  background-color: #48bfe3;
+  -webkit-animation: anim-1 0.3s forwards;
+  animation: anim-1 0.3s forwards;
+  border-color: #48bfe3;
+}
+
+.button--red:hover {
+  -webkit-transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  transition: background-color 0.1s 0.3s, color 0.1s 0.3s;
+  color: #000;
+  background-color: #f94144;
+  -webkit-animation: anim-1 0.3s forwards;
+  animation: anim-1 0.3s forwards;
+  border-color: #f94144;
+}
+
+.button--green:hover::before {
+  -webkit-animation: anim-2 0.3s 0.3s forwards;
+  animation: anim-2 0.3s 0.3s forwards;
+}
+@-webkit-keyframes anim-1 {
   60% {
     -webkit-transform: scale3d(0.8, 0.8, 1);
     transform: scale3d(0.8, 0.8, 1);
@@ -102,7 +136,7 @@
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes anim-moema-1 {
+@keyframes anim-1 {
   60% {
     -webkit-transform: scale3d(0.8, 0.8, 1);
     transform: scale3d(0.8, 0.8, 1);
@@ -116,14 +150,14 @@
     transform: scale3d(1, 1, 1);
   }
 }
-@-webkit-keyframes anim-moema-2 {
+@-webkit-keyframes anim-2 {
   to {
     opacity: 0;
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
   }
 }
-@keyframes anim-moema-2 {
+@keyframes anim-2 {
   to {
     opacity: 0;
     -webkit-transform: scale3d(1, 1, 1);

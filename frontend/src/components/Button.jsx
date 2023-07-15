@@ -1,14 +1,17 @@
 const Button = () => {
   return (
-    <div className="box bg-2">
-      <button className="button button--moema button--border-thick button--size-s">
-        Make it so
+    <div className="box bg">
+      <button className="button button--green button--border-thick button--size-s">
+        Get New
       </button>
-      <button className="button button--moema button--border-thick button--size-s">
-        Add to cart
+      <button className="button button--green button--pink button--border-thick button--size-s">
+        Add New
       </button>
-      <button className="button button--moema button--border-thick button--size-s">
-        Send now
+      <button className="button button--green button--blue button--border-thick button--size-s">
+        Update
+      </button>
+      <button className="button button--green button--red button--border-thick button--size-s">
+        Delete
       </button>
     </div>
   );

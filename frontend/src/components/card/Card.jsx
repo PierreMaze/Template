@@ -21,7 +21,7 @@ const Card = () => {
   }, []);
 
   return (
-    <div className="box">
+    <div className="box-card">
       <ul>
         {users.map((user) => (
           <li key={user.id}>

@@ -16,7 +16,7 @@ CREATE TABLE `users` (
 ) ENGINE = InnoDB DEFAULT CHARSET = utf8 COLLATE = utf8_general_ci;
 
 INSERT INTO `users` (fullname, email, password, gender, phone, picture_profile, is_admin, employment)
-VALUES ("Sassy", "Sassy@exemple.com", "motdepasse2", "Femme", '0465432107', "https://avatars.dicebear.com/api/micah/Sassy.svg", true, "Bâtiment");
+VALUES ("Sassy", "Sassy@exemple.com", "Femme", '0465432107', "https://avatars.dicebear.com/api/micah/Sassy.svg", true, "Bâtiment");
 
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
