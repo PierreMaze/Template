@@ -45,15 +45,22 @@ const getUserById = async (id) => {
 };
 
 const registerUser = async (user) => {
-  const { fullname, email, password } = user;
+  const {
+    fullname = "Michael Anderson",
+    email = "michael.anderson@example.com",
+    gender = "Men",
+    phone = "0765432109",
+    picture_profile = "https://avatars.dicebear.com/api/micah/MichaelAnderson.svg",
+    is_admin = false,
+    employment = "Developer",
+  } = user;
   try {
     const result = await connection
       .promise()
-      .query("INSERT INTO users (fullname, email, password) VALUES(?, ?, ?)", [
-        fullname,
-        email,
-        password,
-      ]);
+      .query(
+        "INSERT INTO users (fullname, email, gender, phone, picture_profile, is_admin, employment) VALUES(?, ?, ?, ?, ?, ?, ?)",
+        [fullname, email, gender, phone, picture_profile, is_admin, employment]
+      );
     if (result.affectedRows === 1) {
       console.info(result);
       return result.insertId;
@@ -71,10 +78,7 @@ const updateUser = async (user, id) => {
     gender,
     phone,
     picture_profile,
-    is_expert,
     is_admin,
-    is_employe,
-    is_benevole,
     employment,
   } = user;
   try {
@@ -89,10 +93,9 @@ const updateUser = async (user, id) => {
         gender,
         phone,
         picture_profile,
-        is_expert,
+
         is_admin,
-        is_employe,
-        is_benevole,
+
         employment,
         id,
       ]);
