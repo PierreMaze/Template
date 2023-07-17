@@ -1,6 +1,6 @@
-@import url(./assets//styles/_home.scss);
-@import url(./assets//styles/_button.scss);
-@import url(./assets//styles/_sideBar.scss);
+@import url(./styles/_home.scss);
+@import url(./styles/_button.scss);
+@import url(./styles/_sideBar.scss);
 
 * {
   box-sizing: border-box;

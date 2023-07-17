@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import {
   getUsers,
   GetRandomUserId,
-  postUser,
+  AddUser,
   deleteUser,
   updateUserById,
 } from "../services/usersService";
@@ -26,7 +26,7 @@ export function UsersProvider({ children }) {
   }
 
   async function postNewUser(user) {
-    const data = await postUser(user);
+    const data = await AddUser(user);
     setUsersData((prevData) => [...prevData, data]);
     return data;
   }

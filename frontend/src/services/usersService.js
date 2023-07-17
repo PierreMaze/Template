@@ -17,16 +17,16 @@ export async function GetRandomUserId() {
     const response = await axios.get(
       `${import.meta.env.VITE_BACKEND_URL}/users/random`
     );
-    return response;
+    return response.data;
   } catch (error) {
     console.error(error);
   }
 }
 
-export async function postUser(user) {
+export async function AddUser(user) {
   try {
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL}/users/register-admin`,
+      `${import.meta.env.VITE_BACKEND_URL}/users/add`,
       user
     );
     return response.data;

@@ -1,13 +1,10 @@
-const jwt = require("jsonwebtoken");
-
 /* eslint-disable camelcase */
 const {
   getAllUsers,
-  registerUser,
-  getUserById,
+  getUserRandomById,
+  addUser,
   updateUser,
   deleteUser,
-  getUserByFullName,
 } = require("../models/users.models");
 
 const GetUsers = async (req, res) => {
@@ -25,50 +22,12 @@ const GetUsers = async (req, res) => {
 
 const GetRandomUserId = async (req, res) => {
   try {
-    // Obtenir tous les utilisateurs disponibles
-    const allUsers = await getAllUsers();
-
-    // Générer un index aléatoire basé sur la longueur des utilisateurs disponibles
-    const randomIndex = Math.floor(Math.random() * allUsers.length);
-
-    // Obtenir l'utilisateur correspondant à l'index aléatoire
-    const randomUser = allUsers[randomIndex];
+    const randomUser = await getUserRandomById();
 
     if (randomUser) {
-      // Renvoyer l'utilisateur correspondant à l'index aléatoire
       res.status(200).json(randomUser);
     } else {
-      res.status(404).send({ message: "no user found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-// Obtenir un utilisateur par son ID;
-const GetUserById = async (req, res) => {
-  try {
-    const { id } = req.params;
-    const user = await getUserById(id);
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(404).send({ message: "no user found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-// Rechercher un utilisateur par son nom_complet
-const GetUserByFullName = async (req, res) => {
-  try {
-    const { name } = req.params;
-    const user = await getUserByFullName(name);
-    if (user) {
-      res.status(200).json(user);
-    } else {
-      res.status(404).send({ message: "no user found" });
+      res.status(404).send({ message: "no Random User found" });
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
@@ -76,22 +35,10 @@ const GetUserByFullName = async (req, res) => {
 };
 
 // Créer un utilisateur
-const RegisterUser = async (req, res) => {
+const AddUser = async (req, res) => {
   try {
-    const create = await registerUser(req.body);
+    const create = await addUser(req.body);
     res.status(201).json({ create });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
-// Log un utilisateur
-const LoginUser = async (req, res) => {
-  const { id, is_admin } = req.body;
-  try {
-    const payload = { id, is_admin };
-    const token = jwt.sign(payload, process.env.JWT_SECRET);
-    res.status(200).json({ token });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
@@ -128,11 +75,8 @@ const DeleteUser = async (req, res) => {
 
 module.exports = {
   GetUsers,
-  GetUserById,
   GetRandomUserId,
-  GetUserByFullName,
-  RegisterUser,
-  LoginUser,
+  AddUser,
   UpdateUser,
   DeleteUser,
 };

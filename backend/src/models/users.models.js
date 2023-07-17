@@ -11,40 +11,18 @@ const getAllUsers = async () => {
   }
 };
 
-const getUserByMail = async (email) => {
-  try {
-    const [response] = await connection
-      .promise()
-      .query("SELECT * FROM users WHERE email = ?", email);
-    return response;
-  } catch (error) {
-    throw new Error("Failed to get all users");
-  }
-};
-
-const getUserByFullName = async (name) => {
-  try {
-    const [response] = await connection
-      .promise()
-      .query("SELECT * FROM users WHERE fullname = ?", name);
-    return response;
-  } catch (error) {
-    throw new Error("Failed to get user by full name");
-  }
-};
-
-const getUserById = async (id) => {
+const getUserRandomById = async () => {
   try {
     const [result] = await connection
       .promise()
-      .query("SELECT * FROM users WHERE id = ?", [id]);
+      .query("SELECT * FROM users ORDER BY RAND() LIMIT 1", [id]);
     return result;
   } catch (error) {
-    throw new Error("Failed to get user by ID");
+    throw new Error("Failed to get userRandom by ID");
   }
 };
 
-const registerUser = async (user) => {
+const addUser = async (user) => {
   const {
     fullname = "Michael Anderson",
     email = "michael.anderson@example.com",
@@ -77,8 +55,8 @@ const updateUser = async (user, id) => {
     email,
     gender,
     phone,
-    picture_profile,
-    is_admin,
+    picture_profile = "https://avatars.dicebear.com/api/micah/MichaelAnderson.svg",
+    is_admin = false,
     employment,
   } = user;
   try {
@@ -126,10 +104,8 @@ const deleteUser = async (id) => {
 
 module.exports = {
   getAllUsers,
-  getUserById,
-  getUserByMail,
-  getUserByFullName,
-  registerUser,
+  getUserRandomById,
+  addUser,
   updateUser,
   deleteUser,
 };
