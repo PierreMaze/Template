@@ -6,6 +6,7 @@ const router = express.Router();
 const {
   GetUsers,
   GetUserById,
+  GetRandomUserId,
   GetUserByFullName,
   RegisterUser,
   LoginUser,
@@ -21,6 +22,8 @@ const { VerifyAccount } = require("../middleware/VerifyAccount");
 // Publics Routes
 router.get("/", GetUsers);
 router.get("/user/:id", GetUserById);
+router.get("/random", GetRandomUserId);
+
 router.get("/name/:name", GetUserByFullName);
 router.post("/register", VerifyMail, hashPassword, RegisterUser);
 router.post("/login", VerifyAccount, LoginUser);

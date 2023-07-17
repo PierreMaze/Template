@@ -23,6 +23,28 @@ const GetUsers = async (req, res) => {
   }
 };
 
+const GetRandomUserId = async (req, res) => {
+  try {
+    // Obtenir tous les utilisateurs disponibles
+    const allUsers = await getAllUsers();
+
+    // Générer un index aléatoire basé sur la longueur des utilisateurs disponibles
+    const randomIndex = Math.floor(Math.random() * allUsers.length);
+
+    // Obtenir l'utilisateur correspondant à l'index aléatoire
+    const randomUser = allUsers[randomIndex];
+
+    if (randomUser) {
+      // Renvoyer l'utilisateur correspondant à l'index aléatoire
+      res.status(200).json(randomUser);
+    } else {
+      res.status(404).send({ message: "no user found" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+};
+
 // Obtenir un utilisateur par son ID;
 const GetUserById = async (req, res) => {
   try {
@@ -107,6 +129,7 @@ const DeleteUser = async (req, res) => {
 module.exports = {
   GetUsers,
   GetUserById,
+  GetRandomUserId,
   GetUserByFullName,
   RegisterUser,
   LoginUser,
