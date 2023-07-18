@@ -28,6 +28,7 @@ export function UsersProvider({ children }) {
     () => ({
       usersData,
       userData,
+      setUserData,
     }),
     [usersData, userData]
   );
