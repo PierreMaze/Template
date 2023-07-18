@@ -12,7 +12,9 @@ export function UsersProvider({ children }) {
     try {
       const data = await getUsers();
       setUsersData(data);
-      setUserData(data[0]);
+      const randomIndex = Math.floor(Math.random() * data.length);
+      setUserData(data[randomIndex]);
+      console.info(data);
     } catch (error) {
       console.error(error);
     }

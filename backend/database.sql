@@ -19,6 +19,6 @@ INSERT INTO `users` (fullname, email, gender, phone, picture_profile, is_admin, 
 VALUES ("Sassy", "Sassy@exemple.com", "Women", '0465432107', "https://avatars.dicebear.com/api/micah/Sassy.svg", false, "Architect"),
 ("John Doe", "john.doe@example.com", "Men", '0123456789', "https://avatars.dicebear.com/api/micah/JohnDoe.svg", false, "Engineer"), 
 ("Alice Smith", "alice.smith@example.com", "Women", '0987654321', "https://avatars.dicebear.com/api/micah/AliceSmith.svg", false, "Doctor"), 
-("Sophie Johnson", "sophie.johnson@example.com", "Men", '0765432109', "https://avatars.dicebear.com/api/micah/MichaelJohnson.svg", false, "Teacher"), 
-("David Brown", "david.brown@example.com", "Women", '0654321098', "https://avatars.dicebear.com/api/micah/EmilyBrown.svg", false, "Accountant"), (fullname, email, gender, phone, picture_profile, is_admin, employment), 
-("Emily Wilson", "emily.wilson@example.com", "Men", '0543210987', "https://avatars.dicebear.com/api/micah/DavidWilson.svg", false, "Lawyer");
+("Sophie Johnson", "sophie.johnson@example.com", "Women", '0765432109', "https://avatars.dicebear.com/api/micah/MichaelJohnson.svg", false, "Teacher"), 
+("David Brown", "david.brown@example.com", "Men", '0654321098', "https://avatars.dicebear.com/api/micah/EmilyBrown.svg", false, "Accountant"),
+("Emily Wilson", "emily.wilson@example.com", "Women", '0543210987', "https://avatars.dicebear.com/api/micah/DavidWilson.svg", false, "Lawyer");
