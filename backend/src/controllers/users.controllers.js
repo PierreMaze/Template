@@ -1,7 +1,8 @@
+// Depuis le fichier <users.controllers.js> dans le dossier "controllers" dans le dossier "src" dans le dossier "backend"
+
 /* eslint-disable camelcase */
 const {
   getAllUsers,
-  getUserRandomById,
   addUser,
   updateUser,
   deleteUser,
@@ -10,52 +11,38 @@ const {
 const GetUsers = async (req, res) => {
   try {
     const users = await getAllUsers();
-    if (users) {
+    if (users.length > 0) {
       res.status(200).json(users);
     } else {
-      res.status(404).message("no users found");
+      res.status(404).json({ message: "No users found" });
     }
   } catch (error) {
-    res.status(500).send("All Users not found");
-  }
-};
-
-const GetRandomUserId = async (req, res) => {
-  try {
-    const randomUser = await getUserRandomById();
-
-    if (randomUser) {
-      res.status(200).json(randomUser);
-    } else {
-      res.status(404).send({ message: "no Random User found" });
-    }
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Failed to get all users" });
   }
 };
 
 // Créer un utilisateur
 const AddUser = async (req, res) => {
   try {
-    const create = await addUser(req.body);
-    res.status(201).json({ create });
+    const createdUser = await addUser(req.body);
+    res.status(201).json({ user: createdUser });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Failed to create user" });
   }
 };
 
-// Update un utilisateur
+// Mettre à jour un utilisateur
 const UpdateUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const response = await updateUser(req.body, id);
-    if (response) {
-      res.status(200).send({ message: "user updated" });
+    const updatedUser = await updateUser(req.body, id);
+    if (updatedUser) {
+      res.status(200).json({ message: "User updated" });
     } else {
-      res.status(404).send({ message: "user not updated" });
+      res.status(404).json({ message: "User not found" });
     }
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Failed to update user" });
   }
 };
 
@@ -63,19 +50,19 @@ const UpdateUser = async (req, res) => {
 const DeleteUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const response = await deleteUser(id);
-    if (response) {
-      res.status(200).send({ message: "user deleted" });
+    const deletedUser = await deleteUser(id);
+    if (deletedUser) {
+      res.status(200).json({ message: "User deleted" });
+    } else {
+      res.status(404).json({ message: "User not found" });
     }
-    res.status(404).send({ message: "user not deleted" });
   } catch (error) {
-    res.status(500).json({ error: error.message });
+    res.status(500).json({ error: "Failed to delete user" });
   }
 };
 
 module.exports = {
   GetUsers,
-  GetRandomUserId,
   AddUser,
   UpdateUser,
   DeleteUser,

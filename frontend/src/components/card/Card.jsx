@@ -1,3 +1,5 @@
+// Depuis le fichier <Card.jsx> dans le dossier "components" dans le dossier "src" dans le dossier "frontend"
+
 import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
 import Footer from "./FooterCard";
@@ -7,36 +9,36 @@ const Card = () => {
 
   return (
     <ul className="box-card">
-      <li key={userData && userData.id}>
+      <li key={userData?.id}>
         <div className="container">
           <div className="box-main">
             <div className="box-img">
-              {userData && <img src={userData.picture_profile} alt="picture" />}
+              <img src={userData?.picture_profile} alt="picture" />
             </div>
           </div>
           <div className="box-secondary">
             <div className="box-title">
               <h1>Hello World!</h1>
-              <h2>My name is {userData && userData.fullname}</h2>
+              <h2>My name is {userData?.fullname}</h2>
             </div>
             <div className="box-subtitle">
               <p>
                 You can contact me by email:
-                <a href={"http://localhost:3000/"}>
-                  <strong> {userData && userData.email}</strong>
+                <a href="http://localhost:3000/">
+                  <strong> {userData?.email}</strong>
                 </a>
               </p>
               <p>
                 <strong>Or by phone: </strong>
-                {userData && userData.phone}.
+                {userData?.phone}.
               </p>
               <p>
                 <strong>Gender: </strong>
-                {userData && userData.gender}.
+                {userData?.gender}.
               </p>
               <p>
                 <strong>Job: </strong>
-                {userData && userData.employment}.
+                {userData?.employment}.
               </p>
               <Footer />
             </div>

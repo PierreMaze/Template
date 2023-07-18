@@ -11,17 +11,6 @@ const getAllUsers = async () => {
   }
 };
 
-const getUserRandomById = async () => {
-  try {
-    const [result] = await connection
-      .promise()
-      .query("SELECT * FROM users ORDER BY RAND() LIMIT 1", [id]);
-    return result;
-  } catch (error) {
-    throw new Error("Failed to get userRandom by ID");
-  }
-};
-
 const addUser = async (user) => {
   const {
     fullname = "Michael Anderson",
@@ -61,7 +50,7 @@ const updateUser = async (user, id) => {
   } = user;
   try {
     const sql =
-      "UPDATE users SET fullname = ?, email = ?, gender = ?, phone = ?, picture_profile = ?, is_expert = ?, is_admin = ?, is_employe = ?, is_benevole = ?, employment = ? WHERE id = ?";
+      "UPDATE users SET fullname = ?, email = ?, gender = ?, phone = ?, picture_profile = ?, is_admin = ?, employment = ? WHERE id = ?";
 
     const response = await connection
       .promise()
@@ -71,9 +60,7 @@ const updateUser = async (user, id) => {
         gender,
         phone,
         picture_profile,
-
         is_admin,
-
         employment,
         id,
       ]);
@@ -104,7 +91,6 @@ const deleteUser = async (id) => {
 
 module.exports = {
   getAllUsers,
-  getUserRandomById,
   addUser,
   updateUser,
   deleteUser,
