@@ -14,6 +14,7 @@ export function UsersProvider({ children }) {
       setUsersData(data);
       const randomIndex = Math.floor(Math.random() * data.length);
       setUserData(data[randomIndex]);
+      console.log(data[randomIndex]);
     } catch (error) {
       console.error(error);
     }
@@ -36,6 +37,7 @@ export function UsersProvider({ children }) {
     () => ({
       usersData,
       userData,
+      setUserData,
       createUserAndSetData,
     }),
     [usersData, userData]
