@@ -19,11 +19,10 @@ export function UsersProvider({ children }) {
     }
   };
 
-  const createdUser = async (user) => {
+  const createUserAndSetData = async (user) => {
     try {
       const data = await createUser(user);
       setUserData(data);
-      console.info(data);
     } catch (error) {
       console.error(error);
     }
@@ -37,8 +36,7 @@ export function UsersProvider({ children }) {
     () => ({
       usersData,
       userData,
-      setUserData,
-      createdUser,
+      createUserAndSetData,
     }),
     [usersData, userData]
   );

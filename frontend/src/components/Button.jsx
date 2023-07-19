@@ -1,9 +1,10 @@
 import { useState, useContext } from "react";
 import { UsersContext } from "../context/UsersContext";
-import FormAdd from "./forms/FormAdd";
+import FormAdd from "./form/FormAdd";
 
 const Button = () => {
-  const { setUserData, usersData, createUser } = useContext(UsersContext);
+  const { setUserData, usersData, createUserAndSetData } =
+    useContext(UsersContext);
   const [showForm, setShowForm] = useState(false);
 
   const handleGetNew = () => {
@@ -16,7 +17,7 @@ const Button = () => {
   };
 
   const handleFormSubmit = async (user) => {
-    await createUser(user);
+    await createUserAndSetData(user);
     setShowForm(false);
   };
 
