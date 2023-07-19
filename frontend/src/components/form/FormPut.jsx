@@ -2,31 +2,33 @@ import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { UsersContext } from "../../context/UsersContext";
 
-const FormAdd = ({ onSubmit, onClose }) => {
-  const { createUserAndSetData } = useContext(UsersContext);
-  const [fullname, setFullname] = useState("");
-  const [email, setEmail] = useState("");
-  const [gender, setGender] = useState("");
-  const [phone, setPhone] = useState("");
-  const [employment, setEmployment] = useState("");
+const FormPut = ({ onSubmit, onClose }) => {
+  const { updateUserAndSetData } = useContext(UsersContext);
+  const { userData } = useContext(UsersContext);
+
+  const [fullname, setFullname] = useState(userData.fullname);
+  const [email, setEmail] = useState(userData.email);
+  const [gender, setGender] = useState(userData.gender);
+  const [phone, setPhone] = useState(userData.phone);
+  const [employment, setEmployment] = useState(userData.employment);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    const newUser = {
+    const updatedUser = {
+      id: userData.id,
       fullname,
       email,
       gender,
       phone,
       employment,
-      picture_profile: getPictureProfile(gender),
+      picture_profile: userData.picture_profile,
     };
 
     try {
-      await createUserAndSetData(newUser);
+      await updateUserAndSetData(updatedUser);
       onSubmit();
       onClose();
-      console.info(onSubmit);
     } catch (error) {
       console.error(error);
     }
@@ -34,19 +36,6 @@ const FormAdd = ({ onSubmit, onClose }) => {
 
   const handleGenderChange = (e) => {
     setGender(e.target.value);
-  };
-
-  const getPictureProfile = (gender) => {
-    switch (gender) {
-      case "Men":
-        return "https://avatars.dicebear.com/api/micah/Sheba.svg";
-      case "Women":
-        return "https://avatars.dicebear.com/api/micah/Rascal.svg";
-      case "No-Specified":
-        return "https://avatars.dicebear.com/api/micah/Garfield.svg";
-      default:
-        return "";
-    }
   };
 
   return (
@@ -128,7 +117,7 @@ const FormAdd = ({ onSubmit, onClose }) => {
       </div>
       <div className="form-group">
         <button type="submit" className="button button--green">
-          Create !
+          Update !
         </button>
         <button
           type="button"
@@ -141,9 +130,9 @@ const FormAdd = ({ onSubmit, onClose }) => {
   );
 };
 
-FormAdd.propTypes = {
+FormPut.propTypes = {
   onSubmit: PropTypes.func,
   onClose: PropTypes.func,
 };
 
-export default FormAdd;
+export default FormPut;

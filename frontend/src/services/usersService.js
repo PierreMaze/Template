@@ -24,3 +24,27 @@ export const createUser = async (user) => {
     throw new Error("Failed to create user");
   }
 };
+
+export const updateUser = async (id) => {
+  try {
+    const response = await axios.put(
+      `${import.meta.env.VITE_BACKEND_URL}/users/update/${id}`,
+      id
+    );
+    return response.data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to update user");
+  }
+};
+
+export const deleteUser = async (id) => {
+  try {
+    await axios.delete(
+      `${import.meta.env.VITE_BACKEND_URL}/users/delete/${id}`
+    );
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to delete user");
+  }
+};

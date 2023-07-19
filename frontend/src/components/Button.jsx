@@ -1,11 +1,18 @@
 import { useState, useContext } from "react";
 import { UsersContext } from "../context/UsersContext";
 import FormAdd from "./form/FormAdd";
+import FormPut from "./form/FormPut";
 
 const Button = () => {
-  const { setUserData, usersData, createUserAndSetData } =
-    useContext(UsersContext);
-  const [showForm, setShowForm] = useState(false);
+  const {
+    setUserData,
+    usersData,
+    createUserAndSetData,
+    updateUserAndSetData,
+    deleteUser,
+  } = useContext(UsersContext);
+  const [showFormAdd, setShowFormAdd] = useState(false);
+  const [showPutForm, setShowPutForm] = useState(false);
 
   const handleGetNew = () => {
     const randomIndex = Math.floor(Math.random() * usersData.length);
@@ -13,12 +20,29 @@ const Button = () => {
   };
 
   const handleAddNew = () => {
-    setShowForm(true);
+    setShowFormAdd(true);
+    setShowPutForm(false);
+  };
+
+  const handleUpdate = () => {
+    setShowPutForm(true);
+    setShowFormAdd(false);
   };
 
   const handleFormSubmit = async (user) => {
-    await createUserAndSetData(user);
-    setShowForm(false);
+    if (showPutForm) {
+      await updateUserAndSetData(user);
+    } else {
+      await createUserAndSetData(user);
+    }
+    showFormAdd(false);
+    setShowPutForm(false);
+  };
+
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      deleteUser();
+    }
   };
 
   return (
@@ -33,13 +57,28 @@ const Button = () => {
         onClick={handleAddNew}>
         Add New
       </button>
-      <button className="button button--green button--blue button--border-thick button--size-s">
+      <button
+        className="button button--green button--blue button--border-thick button--size-s"
+        onClick={handleUpdate}>
         Update
       </button>
-      <button className="button button--green button--red button--border-thick button--size-s">
+      <button
+        className="button button--green button--red button--border-thick button--size-s"
+        onClick={handleDelete}>
         Delete
       </button>
-      {showForm && <FormAdd onSubmit={handleFormSubmit} />}
+      {showFormAdd && (
+        <FormAdd
+          onSubmit={handleFormSubmit}
+          onClose={() => setShowFormAdd(false)}
+        />
+      )}
+      {showPutForm && (
+        <FormPut
+          onSubmit={handleFormSubmit}
+          onClose={() => setShowPutForm(false)}
+        />
+      )}
     </div>
   );
 };

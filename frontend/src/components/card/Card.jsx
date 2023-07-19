@@ -1,5 +1,3 @@
-// Depuis le fichier <Card.jsx> dans le dossier "components" dans le dossier "src" dans le dossier "frontend"
-
 import { useContext } from "react";
 import { UsersContext } from "../../context/UsersContext";
 import Footer from "./FooterCard";

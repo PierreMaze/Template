@@ -1,6 +1,11 @@
 import { createContext, useState, useEffect, useMemo } from "react";
 import PropTypes from "prop-types";
-import { getUsers, createUser } from "../services/usersService";
+import {
+  getUsers,
+  createUser,
+  updateUser,
+  deleteUser,
+} from "../services/UsersService";
 
 export const UsersContext = createContext();
 
@@ -29,6 +34,15 @@ export function UsersProvider({ children }) {
     }
   };
 
+  const updateUserAndSetData = async (user) => {
+    try {
+      const data = await updateUser(user);
+      setUserData(data);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     loadUsers();
   }, []);
@@ -39,6 +53,8 @@ export function UsersProvider({ children }) {
       userData,
       setUserData,
       createUserAndSetData,
+      updateUserAndSetData,
+      deleteUser,
     }),
     [usersData, userData]
   );
