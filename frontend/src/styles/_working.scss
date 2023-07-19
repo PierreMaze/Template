@@ -1,0 +1,28 @@
+.incomming {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 100%;
+  font-weight: 600;
+
+  margin: 200px 0 0;
+
+  .background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    background-color: #57cc99;
+    border-radius: 100%;
+
+    margin-top: 50px;
+
+    .picture-working {
+      height: 50%;
+      width: 100%;
+    }
+  }
+}
