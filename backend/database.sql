@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `Test-Technique`;
-CREATE DATABASE `Test-Technique`;
-USE `Test-Technique`;
+DROP DATABASE IF EXISTS `TestTechnique`;
+CREATE DATABASE `TestTechnique`;
+USE `TestTechnique`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
