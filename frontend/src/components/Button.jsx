@@ -5,11 +5,12 @@ import FormPut from "./form/FormPut";
 
 const Button = () => {
   const {
+    userData,
     setUserData,
     usersData,
     createUserAndSetData,
     updateUserAndSetData,
-    deleteUser,
+    deleteUserAndSetData,
   } = useContext(UsersContext);
   const [showFormAdd, setShowFormAdd] = useState(false);
   const [showPutForm, setShowPutForm] = useState(false);
@@ -28,6 +29,16 @@ const Button = () => {
     setShowPutForm(true);
   };
 
+  const handleDelete = () => {
+    if (window.confirm("Are you sure you want to delete this user?")) {
+      const userId = userData ? userData.id : null;
+      if (userId) {
+        deleteUserAndSetData(userId);
+        console.log("Message success: User deleted! 🎉");
+      }
+    }
+  };
+
   const handleFormSubmit = async (user) => {
     if (showPutForm) {
       await updateUserAndSetData(user);
@@ -36,13 +47,6 @@ const Button = () => {
     }
     setShowFormAdd(false);
     setShowPutForm(false);
-  };
-
-  const handleDelete = () => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
-      deleteUser();
-      console.log("message success : Is Delete ! 🎉");
-    }
   };
 
   return (

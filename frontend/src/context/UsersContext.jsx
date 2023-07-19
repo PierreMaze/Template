@@ -45,6 +45,16 @@ export function UsersProvider({ children }) {
     }
   };
 
+  const deleteUserAndSetData = async (id) => {
+    try {
+      await deleteUser(id);
+      setUserData(null);
+      console.log("This is data PUT :", id);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   useEffect(() => {
     loadUsers();
   }, []);
@@ -56,7 +66,7 @@ export function UsersProvider({ children }) {
       setUserData,
       createUserAndSetData,
       updateUserAndSetData,
-      deleteUser,
+      deleteUserAndSetData,
     }),
     [usersData, userData]
   );

@@ -26,7 +26,7 @@ const FormAdd = ({ onSubmit, onClose }) => {
       await createUserAndSetData(newUser);
       onSubmit();
       onClose();
-      console.log("message success : Is Updated ! 🎉");
+      console.log("message success : Is Created ! 🎉");
     } catch (error) {
       console.error(error);
     }
