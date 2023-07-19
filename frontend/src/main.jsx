@@ -1,15 +1,21 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import Users from "./pages/Users";
+import { BrowserRouter as Router } from "react-router-dom"; // Importer le Router
+import { createRoot } from "react-dom/client";
+import Routing from "./router/index";
 import "./index.css";
 import Sidebar from "./components/sidebar/Sidebar";
 import { UsersProvider } from "./context/UsersContext";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <UsersProvider>
-      <Sidebar />
-      <Users />
+      <Router>
+        <Sidebar />
+        <Routing />
+      </Router>
     </UsersProvider>
   </React.StrictMode>
 );

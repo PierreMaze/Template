@@ -17,16 +17,15 @@ const Button = () => {
   const handleGetNew = () => {
     const randomIndex = Math.floor(Math.random() * usersData.length);
     setUserData(usersData[randomIndex]);
+    console.log("message success : Is GET ! 🎉");
   };
 
   const handleAddNew = () => {
     setShowFormAdd(true);
-    setShowPutForm(false);
   };
 
   const handleUpdate = () => {
     setShowPutForm(true);
-    setShowFormAdd(false);
   };
 
   const handleFormSubmit = async (user) => {
@@ -35,13 +34,14 @@ const Button = () => {
     } else {
       await createUserAndSetData(user);
     }
-    showFormAdd(false);
+    setShowFormAdd(false);
     setShowPutForm(false);
   };
 
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this user?")) {
       deleteUser();
+      console.log("message success : Is Delete ! 🎉");
     }
   };
 
@@ -77,6 +77,7 @@ const Button = () => {
         <FormPut
           onSubmit={handleFormSubmit}
           onClose={() => setShowPutForm(false)}
+          onUpdate={handleUpdate}
         />
       )}
     </div>

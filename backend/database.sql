@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `Checkpoint4`;
-CREATE DATABASE `Checkpoint4`;
-USE `Checkpoint4`;
+DROP DATABASE IF EXISTS `Test-Technique`;
+CREATE DATABASE `Test-Technique`;
+USE `Test-Technique`;
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (

@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import { UsersContext } from "../../context/UsersContext";
 
-const FormPut = ({ onSubmit, onClose }) => {
+const FormPut = ({ onSubmit, onClose, onUpdate }) => {
   const { updateUserAndSetData } = useContext(UsersContext);
   const { userData } = useContext(UsersContext);
 
@@ -12,11 +12,11 @@ const FormPut = ({ onSubmit, onClose }) => {
   const [phone, setPhone] = useState(userData.phone);
   const [employment, setEmployment] = useState(userData.employment);
 
-  const handleFormSubmit = async (e) => {
+  const handleFormSubmit = async (e, id) => {
     e.preventDefault();
 
     const updatedUser = {
-      id: userData.id,
+      id,
       fullname,
       email,
       gender,
@@ -29,6 +29,8 @@ const FormPut = ({ onSubmit, onClose }) => {
       await updateUserAndSetData(updatedUser);
       onSubmit();
       onClose();
+      onUpdate;
+      console.log("message success : Is Updated ! 🎉");
     } catch (error) {
       console.error(error);
     }
@@ -116,7 +118,9 @@ const FormPut = ({ onSubmit, onClose }) => {
         />
       </div>
       <div className="form-group">
-        <button type="submit" className="button button--green">
+        <button
+          type="submit"
+          className="button button--green button--border-thick button--size-s">
           Update !
         </button>
         <button
@@ -133,6 +137,7 @@ const FormPut = ({ onSubmit, onClose }) => {
 FormPut.propTypes = {
   onSubmit: PropTypes.func,
   onClose: PropTypes.func,
+  onUpdate: PropTypes.func,
 };
 
 export default FormPut;

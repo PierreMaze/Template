@@ -19,7 +19,7 @@ export function UsersProvider({ children }) {
       setUsersData(data);
       const randomIndex = Math.floor(Math.random() * data.length);
       setUserData(data[randomIndex]);
-      console.log(data[randomIndex]);
+      console.log("This is data GET :", data[randomIndex]);
     } catch (error) {
       console.error(error);
     }
@@ -29,6 +29,7 @@ export function UsersProvider({ children }) {
     try {
       const data = await createUser(user);
       setUserData(data);
+      console.log("This is data POST :", data, user);
     } catch (error) {
       console.error(error);
     }
@@ -38,6 +39,7 @@ export function UsersProvider({ children }) {
     try {
       const data = await updateUser(user);
       setUserData(data);
+      console.log("This is data PUT :", data, user);
     } catch (error) {
       console.error(error);
     }

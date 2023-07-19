@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Sidebar = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -12,19 +13,19 @@ const Sidebar = () => {
       <nav className={`navbar ${showLinks ? "show-nav" : "hide-nav"} `}>
         <ul className="navbar_links">
           <li className="navbar_item">
-            <a href="/" className="navbar_link">
+            <NavLink to="/" className="navbar_link">
               Home
-            </a>
+            </NavLink>
           </li>
           <li className="navbar_item">
-            <a href="/heros" className="navbar_link">
+            <NavLink to="/users" className="navbar_link">
               Users
-            </a>
+            </NavLink>
           </li>
           <li className="navbar_item">
-            <a href="/about" className="navbar_link">
+            <NavLink to="/about" className="navbar_link">
               About Us
-            </a>
+            </NavLink>
           </li>
         </ul>
         <button className="navbar_burger" onClick={handleShowLinks}>
@@ -33,9 +34,6 @@ const Sidebar = () => {
         <div className="navbar_logo">
           <h2>Logo</h2>
         </div>
-        {/* <a className="navbar_login">
-          <img src="src\assets\image\loginToken.png" alt="Token Login" />
-        </a> */}
       </nav>
     </>
   );

@@ -26,7 +26,7 @@ const FormAdd = ({ onSubmit, onClose }) => {
       await createUserAndSetData(newUser);
       onSubmit();
       onClose();
-      console.info(onSubmit);
+      console.log("message success : Is Updated ! 🎉");
     } catch (error) {
       console.error(error);
     }
@@ -127,7 +127,9 @@ const FormAdd = ({ onSubmit, onClose }) => {
         />
       </div>
       <div className="form-group">
-        <button type="submit" className="button button--green">
+        <button
+          type="submit"
+          className="button button--green button--border-thick button--size-s">
           Create !
         </button>
         <button
