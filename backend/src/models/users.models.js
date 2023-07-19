@@ -13,13 +13,13 @@ const getAllUsers = async () => {
 
 const addUser = async (user) => {
   const {
-    fullname = "Michael Anderson",
-    email = "michael.anderson@example.com",
-    gender = "Men",
-    phone = "0765432109",
-    picture_profile = "https://avatars.dicebear.com/api/micah/MichaelAnderson.svg",
+    fullname,
+    email,
+    gender,
+    phone,
+    picture_profile,
     is_admin = false,
-    employment = "Developer",
+    employment,
   } = user;
   try {
     const result = await connection
@@ -44,7 +44,7 @@ const updateUser = async (user, id) => {
     email,
     gender,
     phone,
-    picture_profile = "https://avatars.dicebear.com/api/micah/MichaelAnderson.svg",
+    picture_profile,
     is_admin = false,
     employment,
   } = user;
