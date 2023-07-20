@@ -29,7 +29,6 @@ const addUser = async (user) => {
         [fullname, email, gender, phone, picture_profile, is_admin, employment]
       );
     if (result.affectedRows === 1) {
-      console.info(result);
       return result.insertId;
     }
     return user;
