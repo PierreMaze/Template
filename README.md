@@ -6,7 +6,7 @@
 
 1. . Crée vos ".env" et remplissez-les avec l'aide des models dans le ".env.sample" dans le dossier racine du frontend et du backend.
 
-2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i -yes` pour inité le projet.
+2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i --yes` pour inité le projet.
 
 Vous devriez voir quelques fichier "package-lock.jsone ce crées avec leurs dossier "node_modules".
 
