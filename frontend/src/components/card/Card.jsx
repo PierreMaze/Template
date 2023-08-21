@@ -22,7 +22,7 @@ const Card = () => {
             <div className="box-subtitle">
               <p>
                 You can contact me by email:
-                <a href="http://localhost:3000/">
+                <a href="https://www.linkedin.com/in/pierremazelaygue//">
                   <strong> {userData?.email}</strong>
                 </a>
               </p>

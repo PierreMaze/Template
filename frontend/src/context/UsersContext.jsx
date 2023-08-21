@@ -49,7 +49,7 @@ export function UsersProvider({ children }) {
     try {
       await deleteUser(id);
       setUserData(null);
-      console.log("This is data PUT :", id);
+      console.log("This is data DEL :", id);
     } catch (error) {
       console.error(error);
     }
