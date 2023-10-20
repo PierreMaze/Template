@@ -4,9 +4,9 @@
 
 # Veuillez suivre les étapes pour lancer le projet :
 
-1. . Crée vos ".env" et remplissez-les avec l'aide des models dans le ".env.sample" dans le dossier racine du frontend et du backend.
+# 1. Crée vos ".env" et remplissez-les avec l'aide des models dans le ".env.sample" dans le dossier racine du frontend et du backend.
 
-2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i --yes` pour initer le projet.
+# 2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i --yes` pour initer le projet.
 
 Vous devriez voir quelques fichiers "package-lock.json" se crées avec leurs dossiers "node_modules".
 
