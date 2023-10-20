@@ -1,6 +1,6 @@
 ### Bonjour ! J'ai fais un C.R.U.D avec une partie frontend / backend en ReactJs & NodeJs.
 
-## Si vous préfèrer avoir un visuel ? VOus n'avez qu'à suivre les étapes ci-dessous ⬇⬇⬇
+## Si vous préfèrer avoir un visuel ? Vous n'avez qu'à suivre les étapes ci-dessous ⬇⬇⬇
 
 # Veuillez suivre les étapes pour lancer le projet :
 
