@@ -1,16 +1,16 @@
-### Bonjour ! J'ai fais un C.R.U.D avec une partie frontend / backend en ReactJs & NodeJs.
+### Bonjour ! J'ai faits un C.R.U.D avec une partie frontend / backend en ReactJs & NodeJs.
 
-## Si vous préfèrer avoir un visuel ? Vous n'avez qu'à suivre les étapes ci-dessous ⬇⬇⬇
+## Vous préfèrez avoir un visuel ? Vous n'avez qu'à suivre les étapes ci-dessous ⬇⬇⬇
 
 # Veuillez suivre les étapes pour lancer le projet :
 
 1. . Crée vos ".env" et remplissez-les avec l'aide des models dans le ".env.sample" dans le dossier racine du frontend et du backend.
 
-2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i --yes` pour inité le projet.
+2. Dans le dossier racine du projet, lancer votre terminal préféré et faites un `npm i --yes` pour initer le projet.
 
-Vous devriez voir quelques fichier "package-lock.jsone ce crées avec leurs dossier "node_modules".
+Vous devriez voir quelques fichiers "package-lock.json" se crées avec leurs dossiers "node_modules".
 
-Si ce n'est pas le cas, vous devez lancer cette comande dans le terminal et dans l'ordre :
+Si ce n'est pas le cas, vous devez lancer cette commande dans le terminal et dans l'ordre :
 
     npm i
 
