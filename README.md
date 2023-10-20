@@ -14,7 +14,7 @@ Si ce n'est pas le cas, vous devez lancer cette commande dans le terminal et dan
 
     npm i
 
-// si vulnérabilité lanceer la commande suivante
+// Il y a une vulnérabilité ? lançait la commande suivante ⬇⬇⬇
 
     npm audit fix
 
@@ -22,11 +22,11 @@ Si ce n'est pas le cas, vous devez lancer cette commande dans le terminal et dan
 
     cd frontend
 
-// Installer les node_modules et sont package-lock.json
+// Installer les node_modules avec le package-lock.json
 
     npm i
 
-// si vulnérabilité lanceer la commande suivante
+// Il y a une vulnérabilité ? lançait la commande suivante ⬇⬇⬇
 
     npm audit fix
 
@@ -38,11 +38,11 @@ Si ce n'est pas le cas, vous devez lancer cette commande dans le terminal et dan
 
     cd backend
 
-// Installer les node_modules et sont package-lock.json
+// Installer les node_modules avec le package-lock.json
 
     npm i
 
-// si vulnérabilité lanceer la commande suivante
+// Il y a une vulnérabilité ? lançait la commande suivante ⬇⬇⬇
 
     npm audit fix
 
@@ -50,7 +50,7 @@ Si ce n'est pas le cas, vous devez lancer cette commande dans le terminal et dan
 
    npm run migrate
 
-// Si cela ne fonctionne pas il faudra l'importer. Plusieur tutoriel sont disponible sur Youtube.
+// Si cela ne fonctionne pas, il faudra l'importer depuis le logiciel de gestionnaire de base de données relationnel. Plusieurs tutoriels sont disponibles sur Youtube.
 
 4. Faites un `npm run dev` pour lancer le projet, une fois que vous avez tout installer et crée vos variables d'environement (.env).
 
